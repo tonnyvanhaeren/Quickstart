@@ -20,6 +20,10 @@ namespace MVCClient
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
+
+
             services.AddAuthentication(options => {
                 options.DefaultScheme = "Cookies";
                 options.DefaultChallengeScheme = "oidc";
